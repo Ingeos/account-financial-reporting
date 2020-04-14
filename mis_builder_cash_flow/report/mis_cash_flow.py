@@ -25,6 +25,11 @@ class MisCashFlow(models.Model):
         index=True,
         readonly=True,
     )
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Partner',
+        readonly=True,
+    )
     move_line_id = fields.Many2one(
         comodel_name='account.move.line',
         string='Journal Item',
@@ -66,6 +71,8 @@ class MisCashFlow(models.Model):
 
     @api.model_cr
     def init(self):
+        account_type_receivable = self.env.ref(
+            'account.data_account_type_receivable')
         query = """
             SELECT
                 -- we use negative id to avoid duplicates and we don't use
@@ -86,6 +93,7 @@ class MisCashFlow(models.Model):
                 END AS credit,
                 aml.reconciled as reconciled,
                 aml.full_reconcile_id as full_reconcile_id,
+                aml.partner_id as partner_id,
                 aml.company_id as company_id,
                 aml.user_type_id as user_type_id,
                 aml.name as name,
@@ -109,13 +117,13 @@ class MisCashFlow(models.Model):
                 END AS credit,
                 Null as reconciled,
                 Null as full_reconcile_id,
+                fl.partner_id as partner_id,
                 fl.company_id as company_id,
-                -- we dont need this field on forecast lines
-                Null as user_type_id,
+                %i as user_type_id,
                 fl.name as name,
                 fl.date as date
             FROM mis_cash_flow_forecast_line as fl
-        """
+        """ % account_type_receivable.id
         tools.drop_view_if_exists(self.env.cr, self._table)
         self._cr.execute(
             'CREATE OR REPLACE VIEW %s AS %s',

@@ -1,80 +1,81 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* account_export_csv
+#	* account_export_csv
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 7.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 12:52+0000\n"
-"PO-Revision-Date: 2013-08-22 12:52+0000\n"
-"Last-Translator: <stefan@therp.nl>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2020-03-05 12:13+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
+"Language-Team: none\n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "<span string=\"-\" class=\"oe_inline\"/>"
-msgstr ""
+msgstr "<span string=\"-\" class=\"oe_inline\"/>"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:254
 #, python-format
 msgid "ACCOUNT CODE"
-msgstr ""
+msgstr "ŠIFRA KONTA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:173
 #: code:addons/account_export_csv/wizard/account_export_csv.py:265
 #, python-format
 msgid "ACCOUNT NAME"
-msgstr ""
+msgstr "NAZIV KONTA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:267
 #, python-format
 msgid "AMOUNT CURRENCY"
-msgstr ""
+msgstr "IZNOS U VALUTI"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:261
 #, python-format
 msgid "ANALYTIC ACCOUNT CODE"
-msgstr ""
+msgstr "ŠIFRA ANALITIČKOG KONTA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:269
 #, python-format
 msgid "ANALYTIC ACCOUNT NAME"
-msgstr ""
+msgstr "NAZIV ANALITIČKOG KONTA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:170
 #, python-format
 msgid "ANALYTIC CODE"
-msgstr ""
+msgstr "ŠIFRA ANALITIKE"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:171
 #, python-format
 msgid "ANALYTIC NAME"
-msgstr ""
+msgstr "NAZIV ANALITIKE"
 
 #. module: account_export_csv
 #: model:ir.actions.act_window,name:account_export_csv.action_account_csv_export
 #: model:ir.ui.menu,name:account_export_csv.menu_account_csv_export
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Accounting CSV Export"
-msgstr "CSV export financiën"
+msgstr "Izvoz podataka u CSV"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Analytic Balance (with accounts)"
-msgstr "Kostenplaatsenbalans (met rekeningen)"
+msgstr "Analitički saldo (sa kontima)"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:119
@@ -82,20 +83,20 @@ msgstr "Kostenplaatsenbalans (met rekeningen)"
 #: code:addons/account_export_csv/wizard/account_export_csv.py:266
 #, python-format
 msgid "BALANCE"
-msgstr ""
+msgstr "SALDO"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:273
 #, python-format
 msgid "BANK STATEMENT"
-msgstr ""
+msgstr "BANKOVNI IZVOD"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:115
 #: code:addons/account_export_csv/wizard/account_export_csv.py:172
 #, python-format
 msgid "CODE"
-msgstr ""
+msgstr "ŠIFRA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:118
@@ -103,7 +104,7 @@ msgstr ""
 #: code:addons/account_export_csv/wizard/account_export_csv.py:259
 #, python-format
 msgid "CREDIT"
-msgstr ""
+msgstr "POTRAŽUJE"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__data
@@ -114,33 +115,33 @@ msgstr "CSV"
 #: code:addons/account_export_csv/wizard/account_export_csv.py:268
 #, python-format
 msgid "CURRENCY"
-msgstr ""
+msgstr "VALUTA"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Close"
-msgstr "Sluiten"
+msgstr "Zatvori"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__company_id
 msgid "Company"
-msgstr "Bedrijf"
+msgstr "Tvrtka"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Kreirao"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Kreirano"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:252
 #, python-format
 msgid "DATE"
-msgstr ""
+msgstr "DATUM"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:117
@@ -148,158 +149,149 @@ msgstr ""
 #: code:addons/account_export_csv/wizard/account_export_csv.py:258
 #, python-format
 msgid "DEBIT"
-msgstr ""
+msgstr "DUGUJE"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:257
 #, python-format
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "OPIS"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__date_end
 msgid "Date End"
-msgstr ""
+msgstr "Završni datum"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__date_start
 msgid "Date Start"
-msgstr ""
+msgstr "Početni datum"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__date_range_id
 msgid "Date range"
-msgstr ""
+msgstr "Raspon datuma"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:264
 #, python-format
 msgid "ENTRY NUMBER"
-msgstr ""
+msgstr "BROJ STAVKE"
 
 #. module: account_export_csv
 #: model:ir.model,name:account_export_csv.model_account_csv_export
 msgid "Export Accounting"
-msgstr "Export Financiën"
+msgstr "Izvoz podataka računovodstva"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__export_filename
 msgid "Export CSV Filename"
-msgstr "Export CSV bestandsnaam"
+msgstr "Naziv CVS datoteke"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:260
 #, python-format
 msgid "FULL RECONCILE"
-msgstr ""
+msgstr "POTPUNO ZATVORENO"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: account_export_csv
 #: model:ir.model.fields,help:account_export_csv.field_account_csv_export__journal_ids
 msgid "If empty, use all journals, only used for journal entries"
-msgstr ""
+msgstr "Ako je prazno, koristi sve dnevnike, samo se odnosi na stavke dnevnika"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:270
 #, python-format
 msgid "JOURNAL"
-msgstr ""
+msgstr "DNEVNIK"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:253
 #, python-format
 msgid "JOURNAL CODE"
-msgstr ""
+msgstr "ŠIFRA DNEVNIKA"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Journal Entries"
-msgstr ""
+msgstr "Stavke dnevnika"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__journal_ids
 msgid "Journals"
-msgstr ""
+msgstr "Dnevnici"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Zadnje modificirano"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Zadnje ažurirao"
 
 #. module: account_export_csv
 #: model:ir.model.fields,field_description:account_export_csv.field_account_csv_export__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Zadnje ažurirano"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:116
 #, python-format
 msgid "NAME"
-msgstr ""
+msgstr "NAZIV"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:255
 #, python-format
 msgid "PARTNER NAME"
-msgstr ""
+msgstr "NAZIV PARTNERA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:256
 #, python-format
 msgid "REF"
-msgstr ""
+msgstr "REF"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Report"
-msgstr ""
+msgstr "Izvještaj"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:271
 #, python-format
 msgid "TAX CODE"
-msgstr ""
+msgstr "ŠIFRA POREZA"
 
 #. module: account_export_csv
 #: code:addons/account_export_csv/wizard/account_export_csv.py:272
 #, python-format
 msgid "TAX NAME"
-msgstr ""
+msgstr "NAZIV POREZA"
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "Trial Balance"
-msgstr "Proefbalans"
+msgstr ""
 
 #. module: account_export_csv
 #: model_terms:ir.ui.view,arch_db:account_export_csv.account_csv_export_view
 msgid "or"
-msgstr ""
-
-#~ msgid "All periods in the fiscal year if empty"
-#~ msgstr "Alle periodes van het boekjaar indien leeg"
-
-#~ msgid "Periods"
-#~ msgstr "Periodes"
-
-#~ msgid "Fiscalyear"
-#~ msgstr "Boekjaar"
+msgstr "ili"
