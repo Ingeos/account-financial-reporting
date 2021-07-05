@@ -237,6 +237,7 @@ class TestJournalReport(AccountTestInvoicingCommon):
         )
         move_form.partner_id = self.partner_2
         move_form.journal_id = self.journal_purchase
+        move_form.invoice_date = Date.today()
         with move_form.invoice_line_ids.new() as line_form:
             line_form.name = "test"
             line_form.quantity = 1.0
@@ -250,6 +251,7 @@ class TestJournalReport(AccountTestInvoicingCommon):
             line_form.account_id = self.expense_account
             line_form.tax_ids.add(self.tax_15_p)
             line_form.tax_ids.add(self.tax_20_p)
+        move_form.invoice_date = move_form.date
         invoice = move_form.save()
         invoice.action_post()
 
