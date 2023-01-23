@@ -130,7 +130,6 @@ Contributors
   * Ernesto Tejeda
   * João Marques
   * Alexandre D. Díaz
-  * Víctor Martínez
 
 * `Sygel <https://www.sygel.es>`__:
 
@@ -138,8 +137,6 @@ Contributors
   * Valentin Vinagre
 
 * Lois Rilo <lois.rilo@forgeflow.com>
-* Saran Lim. <saranl@ecosoft.co.th>
-* Omar Castiñeira <omar@comunitea.com>
 
 Much of the work in this module was done at a sprint in Sorrento, Italy in
 April 2016.

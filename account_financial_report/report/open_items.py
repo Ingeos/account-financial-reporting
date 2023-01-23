@@ -197,7 +197,7 @@ class OpenItemsReport(models.AbstractModel):
 
     @api.model
     def _order_open_items_by_date(
-        self, open_items_move_lines_data, show_partner_details, partners_data
+        self, open_items_move_lines_data, show_partner_details
     ):
         new_open_items = {}
         if not show_partner_details:
@@ -212,10 +212,7 @@ class OpenItemsReport(models.AbstractModel):
         else:
             for acc_id in open_items_move_lines_data.keys():
                 new_open_items[acc_id] = {}
-                for prt_id in sorted(
-                    open_items_move_lines_data[acc_id],
-                    key=lambda i: partners_data[i]["name"],
-                ):
+                for prt_id in open_items_move_lines_data[acc_id]:
                     new_open_items[acc_id][prt_id] = {}
                     move_lines = []
                     for move_line in open_items_move_lines_data[acc_id][prt_id]:
@@ -253,7 +250,7 @@ class OpenItemsReport(models.AbstractModel):
 
         total_amount = self._calculate_amounts(open_items_move_lines_data)
         open_items_move_lines_data = self._order_open_items_by_date(
-            open_items_move_lines_data, show_partner_details, partners_data
+            open_items_move_lines_data, show_partner_details
         )
         return {
             "doc_ids": [wizard_id],
