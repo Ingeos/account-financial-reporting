@@ -211,6 +211,12 @@ class GeneralLedgerReportMoveLine(models.TransientModel):
     amount_currency = fields.Float(digits=(16, 2))
 
 
+    parent_id = fields.Char()
+    group_id = fields.Char()
+    user_id = fields.Char()
+    team_id = fields.Char()
+
+
 class GeneralLedgerReportCompute(models.TransientModel):
     """ Here, we just define methods.
     For class fields, go more top at this file.
@@ -1093,6 +1099,10 @@ INSERT INTO
     partner,
     label,
     cost_center,
+    parent_id,
+    group_id,
+    user_id,
+    team_id,
     matching_number,
     debit,
     credit,
@@ -1157,6 +1167,10 @@ SELECT
         query_inject_move_line += """
     CONCAT_WS(' - ', NULLIF(ml.ref, ''), NULLIF(ml.name, '')) AS label,
     aa.name AS cost_center,
+    aparent.name AS parent_id,
+    agroup.name AS group_id,
+    puser.name AS user_id,
+    team.name AS team_id,
     fr.name AS matching_number,
     ml.debit,
     ml.credit,
@@ -1203,10 +1217,18 @@ INNER JOIN
         query_inject_move_line += """
 INNER JOIN
     account_move_line ml ON ra.account_id = ml.account_id
-INNER JOIN
+LEFT JOIN
     account_move m ON ml.move_id = m.id
-INNER JOIN
+LEFT JOIN
     account_journal j ON ml.journal_id = j.id
+LEFT JOIN
+    account_invoice inv ON ml.invoice_id = inv.id
+LEFT JOIN
+    res_users usr_id ON inv.user_id = usr_id.id
+LEFT JOIN
+    res_partner puser ON usr_id.partner_id = puser.id
+LEFT JOIN
+    crm_team team ON inv.team_id = team.id
 INNER JOIN
     account_account a ON ml.account_id = a.id
 LEFT JOIN
@@ -1248,6 +1270,10 @@ LEFT JOIN
             move_lines_on_tags ON ml.id = move_lines_on_tags.ml_id
                     """
         query_inject_move_line += """
+LEFT JOIN
+    account_analytic_account aparent ON aa.parent_id = aparent.id
+LEFT JOIN
+    account_analytic_group agroup ON aa.group_id = agroup.id
 WHERE
     ra.report_id = %s
 AND

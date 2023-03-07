@@ -124,7 +124,7 @@
                     <div class="act_as_cell" style="width: 4.13%;">Journal</div>
                     <!--## account code-->
                     <div class="act_as_cell" style="width: 4.75%;">Account</div>
-                    <!--## account code-->
+                    <!--## taxes-->
                     <div class="act_as_cell" style="width: 8.89%;">Taxes</div>
                     <!--## partner-->
                     <div class="act_as_cell" style="width: 12.01%;">Partner
@@ -136,11 +136,19 @@
                         <!--## cost_center-->
                         <div class="act_as_cell" style="width: 8.03%;">Cost
                             center</div>
+                        <!--## account mother-->
+                        <div class="act_as_cell" style="width: 4.75%;">Account Mother</div>
+                        <!--## account group-->
+                        <div class="act_as_cell" style="width: 4.75%;">Account Group</div>
                     </t>
                     <t t-if="show_analytic_tags">
                         <!--## analytic tags-->
                         <div class="act_as_cell" style="width: 4.75%;">Tags</div>
                     </t>
+                    <!--## comercial-->
+                    <div class="act_as_cell" style="width: 2.41%;">Comercial</div>
+                    <!--## equipo ventas-->
+                    <div class="act_as_cell" style="width: 2.41%;">Team</div>
                     <!--## matching_number-->
                     <div class="act_as_cell" style="width: 2.41%;">Rec.</div>
                     <!--## debit-->
@@ -177,11 +185,19 @@
                 <t t-if="show_cost_center">
                     <!--## cost_center-->
                     <div class="act_as_cell"/>
+                    <!--## account mother-->
+                    <div class="act_as_cell"/>
+                    <!--## account group-->
+                    <div class="act_as_cell"/>
                 </t>
                 <t t-if="show_analytic_tags">
                     <!--## analytic tags-->
                     <div class="act_as_cell"></div>
                 </t>
+                <!--## comercial-->
+                <div class="act_as_cell"/>
+                <!--## team-->
+                <div class="act_as_cell"/>
                 <!--## matching_number-->
                 <div class="act_as_cell"/>
                 <!--## debit-->
@@ -395,11 +411,52 @@
                                    style="color: black;"><t t-raw="line.cost_center"/></a>
                             </span>
                         </div>
+                        <!--## account mother-->
+                        <div class="act_as_cell left">
+                            <t t-set="res_model" t-value="'account.analytic.account'"/>
+                            <span t-if="line.cost_center">
+                                <a t-att-data-active-id="line.move_line_id.analytic_account_id.parent_id.id"
+                                   t-att-data-res-model="res_model"
+                                   class="o_account_financial_reports_web_action"
+                                   style="color: black;"><t t-raw="line.parent_id"/></a>
+                            </span>
+                        </div>
+                        <!--## account group-->
+                        <div class="act_as_cell left">
+                        <t t-set="res_model" t-value="'account.analytic.group'"/>
+                        <span>
+                            <a t-att-data-active-id="line.move_line_id.analytic_account_id.group_id.id"
+                               t-att-data-res-model="res_model"
+                               class="o_account_financial_reports_web_action"
+                               style="color: black;">
+                                <t t-raw="line.group_id"/></a>
+                        </span>
+                    </div>
                     </t>
                     <t t-if="show_analytic_tags">
                         <!--## analytic tags-->
                         <div class="act_as_cell left"><span t-field="line.tags"/></div>
                     </t>
+                    <!--## comercial-->
+                    <div class="act_as_cell">
+                        <t t-set="res_model" t-value="'res.users'"/>
+                        <span>
+                            <a t-att-data-active-id="line.move_line_id.invoice_id.user_id.id"
+                               t-att-data-res-model="res_model"
+                               class="o_account_financial_reports_web_action"
+                               style="color: black;"><t t-raw="line.user_id"/></a>
+                        </span>
+                    </div>
+                    <!--## team-->
+                    <div class="act_as_cell">
+                        <t t-set="res_model" t-value="'crm.team'"/>
+                        <span>
+                            <a t-att-data-active-id="line.move_line_id.invoice_id.team_id.id"
+                               t-att-data-res-model="res_model"
+                               class="o_account_financial_reports_web_action"
+                               style="color: black;"><t t-raw="line.team_id"/></a>
+                        </span>
+                    </div>
                     <!--## matching_number-->
                     <div class="act_as_cell">
                         <t t-set="res_model" t-value="'account.full.reconcile'"/>
