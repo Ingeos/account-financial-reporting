@@ -39,7 +39,7 @@ class GeneralLedgerXslx(models.AbstractModel):
                 'field': 'tags',
                 'width': 10},
             11: {'header': _('Comercial'),
-                'field': 'comercial_id',
+                'field': 'user_id',
                 'width': 10},
             12: {'header': _('Team'),
                 'field': 'team_id',
