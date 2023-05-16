@@ -149,6 +149,8 @@
                     <div class="act_as_cell" style="width: 2.41%;">Comercial</div>
                     <!--## equipo ventas-->
                     <div class="act_as_cell" style="width: 2.41%;">Team</div>
+                    <!--## equipo ventas-->
+                    <div class="act_as_cell" style="width: 2.41%;">Responsable</div>
                     <!--## matching_number-->
                     <div class="act_as_cell" style="width: 2.41%;">Rec.</div>
                     <!--## debit-->
@@ -455,6 +457,16 @@
                                t-att-data-res-model="res_model"
                                class="o_account_financial_reports_web_action"
                                style="color: black;"><t t-raw="line.team_id"/></a>
+                        </span>
+                    </div>
+                    <!--## responsible-->
+                    <div class="act_as_cell">
+                        <t t-set="res_model" t-value="'res.partner'"/>
+                        <span>
+                            <a t-att-data-active-id="line.move_line_id.analytic_account_id.responsible_id.id"
+                               t-att-data-res-model="res_model"
+                               class="o_account_financial_reports_web_action"
+                               style="color: black;"><t t-raw="line.responsible_id"/></a>
                         </span>
                     </div>
                     <!--## matching_number-->

@@ -215,6 +215,7 @@ class GeneralLedgerReportMoveLine(models.TransientModel):
     group_id = fields.Char()
     user_id = fields.Char()
     team_id = fields.Char()
+    responsible_id = fields.Char()
 
 
 class GeneralLedgerReportCompute(models.TransientModel):
@@ -1103,6 +1104,7 @@ INSERT INTO
     group_id,
     user_id,
     team_id,
+    responsible_id,
     matching_number,
     debit,
     credit,
@@ -1171,6 +1173,7 @@ SELECT
     agroup.name AS group_id,
     puser.name AS user_id,
     team.name AS team_id,
+    responsible.name AS responsible_id,
     fr.name AS matching_number,
     ml.debit,
     ml.credit,
@@ -1220,15 +1223,21 @@ INNER JOIN
 LEFT JOIN
     account_move m ON ml.move_id = m.id
 LEFT JOIN
+    account_analytic_account aacml ON ml.analytic_account_id = aacml.id
+LEFT JOIN
     account_journal j ON ml.journal_id = j.id
 LEFT JOIN
     account_invoice inv ON ml.invoice_id = inv.id
 LEFT JOIN
-    res_users usr_id ON inv.user_id = usr_id.id
+    res_users usr_id ON aacml.comercial_id = usr_id.id
+LEFT JOIN
+    res_users responsible_us ON aacml.responsible_id = responsible_us.id
+LEFT JOIN
+    res_partner responsible ON responsible_us.partner_id = responsible.id
 LEFT JOIN
     res_partner puser ON usr_id.partner_id = puser.id
 LEFT JOIN
-    crm_team team ON inv.team_id = team.id
+    crm_team team ON aacml.team_id = team.id
 INNER JOIN
     account_account a ON ml.account_id = a.id
 LEFT JOIN
