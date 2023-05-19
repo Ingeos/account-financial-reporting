@@ -215,6 +215,7 @@ class GeneralLedgerReportMoveLine(models.TransientModel):
     group_id = fields.Char()
     user_id = fields.Char()
     team_id = fields.Char()
+    analytic_project_id = fields.Char()
     responsible_id = fields.Char()
 
 
@@ -1104,6 +1105,7 @@ INSERT INTO
     group_id,
     user_id,
     team_id,
+    analytic_project_id,
     responsible_id,
     matching_number,
     debit,
@@ -1173,6 +1175,7 @@ SELECT
     agroup.name AS group_id,
     puser.name AS user_id,
     team.name AS team_id,
+    aproject_id.name AS analytic_project_id,
     responsible.name AS responsible_id,
     fr.name AS matching_number,
     ml.debit,
@@ -1230,6 +1233,8 @@ LEFT JOIN
     account_invoice inv ON ml.invoice_id = inv.id
 LEFT JOIN
     res_users usr_id ON aacml.comercial_id = usr_id.id
+LEFT JOIN
+    project_project aproject_id ON aacml.analytic_project_id = aproject_id.id
 LEFT JOIN
     res_users responsible_us ON aacml.responsible_id = responsible_us.id
 LEFT JOIN
